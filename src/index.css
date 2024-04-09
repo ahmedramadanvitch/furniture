@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden !important;
+}
+
+@media(min-width: 1536px) {
+  .container {
+    max-width: 1400px !important;
+  }
+}

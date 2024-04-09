@@ -1,0 +1,39 @@
+.left {
+  background-image: url("https://static.live.templately.com/woocommerce/2021/09/21bbcf2d-retailhut-home-banner-pattern.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right {
+  background-image: url("https://static.live.templately.com/woocommerce/2021/09/c8646c8c-retailhut-home-banner-image.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.left,
+.right {
+  width: 50vw;
+}
+
+@media (max-width: 640px) {
+  .hero-landing {
+    flex-direction: column !important;
+  }
+
+  .right {
+    order: 1;
+  }
+
+  .left {
+    order: 2;
+  }
+
+  .left,
+  .right {
+    display: list-item;
+    width: 100%;
+    height: 50vh;
+  }
+}
