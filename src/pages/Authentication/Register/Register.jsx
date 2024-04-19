@@ -46,7 +46,12 @@ export default function Register() {
       .email("email is not valid"),
     password: Yup.string()
       .required("password is required")
-      .matches(/^[A-Z][a-z0-9]{5,10}$/, "password not valid"),
+      .min(5, "too short min is 5")
+      .max(10, "too long max is 10")
+      .matches(
+        /^[A-Z][a-z0-9]{5,10}$/,
+        "password not valid it must start with capital character and only 10"
+      ),
     rePassword: Yup.string()
       .required("rePassword is required")
       .oneOf([Yup.ref("password")], "must be like password"),
@@ -139,6 +144,7 @@ export default function Register() {
                 <input
                   className="w-full pl-2 outline-none border-none"
                   type="password"
+                  maxLength={10}
                   placeholder="Password"
                   id="password"
                   value={formik.values.password}
@@ -161,6 +167,7 @@ export default function Register() {
                   className="w-full pl-2 outline-none border-none"
                   type="password"
                   placeholder="Re-Password"
+                  maxLength={10}
                   id="rePassword"
                   value={formik.values.rePassword}
                   onChange={formik.handleChange}
